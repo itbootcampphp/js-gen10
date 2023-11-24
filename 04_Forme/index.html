@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forme</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Osnovne informacije</legend>
+
+            <p>
+                <label for="name">Ime: </label>
+                <input type="text" id="name">
+            </p>
+
+            <p>
+                <input type="text" placeholder="Prezime">
+            </p>
+
+            <p>
+                <input type="text" value="Kurs" maxlength="10">
+            </p>
+
+            <p>
+                <label for="">Godine: </label>
+                
+            </p>
+
+            <p>
+                <label for="">Lozinka: </label>
+                <input type="password">
+            </p>
+
+            <p>
+                <label for="">Datum rođenja:</label>
+                <input type="date" min="1900-01-01" max="2023-11-25" step="3">
+            </p>
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Dodatne informacije</legend>
+
+            <p>
+                <label>Odaberite kurs:</label>
+                <input type="radio" name="kurs" value="JavaScript" checked>JS
+                <input type="radio" name="kurs" value="php">PHP
+                <input type="radio" name="kurs" value="qa">QA
+            </p>
+
+            <p>
+                <label for="">Znanje:</label>
+                <input type="checkbox" name="znanje" value="html" id="html" checked><label for="html">HTML</label>
+                <input type="checkbox" name="znanje" value="css" id="css"><label for="css">CSS</label>
+                <input type="checkbox" name="znanje" value="js" id="js"><label for="js">JS</label> 
+            </p>
+
+            <p>
+                <label for="fajl">Odaberite fajl:</label>
+                <input type="file" name="" id="fajl">
+            </p>
+
+            <p>
+                <select name="" id="">
+                    <optgroup label="Niš">
+                        <option value="js">Java Script</option>
+                        <option value="qa-ni">QA</option>
+                    </optgroup>
+
+                    <optgroup label="Beograd">
+                        <option value="py">Python</option>
+                        <option value="php">PHP</option>
+                        <option value="qa-bg">QA</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+
+        <input type="button" value="Klikni">
+        <input type="submit" value="Pošalji">
+        <input type="reset" value="Resetuj">
+        <button>Hello</button>
+    </form>
+</body>
+</html>
