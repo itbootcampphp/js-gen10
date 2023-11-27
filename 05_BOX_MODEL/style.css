@@ -26,6 +26,20 @@ p {
     height: 300px;
 }
 
+span {
+    background-color: brown;
+    color: white;
+    border: 3px solid blue;
+    padding: 30px;
+    width: 50%;
+    display: inline-block;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 /*
 
 BLOCK (zauzima citavu sirinu ekrana)
@@ -37,7 +51,7 @@ INLINE (zauzima samo neophodnu sirinu i visinu)
 dispay svojstvo
     display: block; (ovim elementima mozete da podesavate widht i height, redjaju se jedan ispod drugog)
     display: inline; (ovim elementima ne mozete da podesavate width i height, redjaju se jedan do drugog)
-    dispaly: inline-block; (ovim elementima mozete da podesavate widht i height, redjaju se jedan do drugog)
+    display: inline-block; (ovim elementima mozete da podesavate widht i height, redjaju se jedan do drugog)
 
 
 
