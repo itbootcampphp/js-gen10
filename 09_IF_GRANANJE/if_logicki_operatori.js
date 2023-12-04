@@ -44,6 +44,15 @@ U suprotnom ispisati “zatvoreno”.
     prikazati sličicu otvorenih vrata na ekranu. 
     Ukoliko je butik trenutno zatvoren, prikazati sličicu zatvorenih vrata.)
 */
+let dan = datum.getDay();
+let vreme = datum.getHours();
+if (dan != 0 && dan != 6 && vreme >= 9 && vreme < 20) {
+    document.write('<img src="https://images.pexels.com/photos/1544420/pexels-photo-1544420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">');
+} else if ((dan == 6 || dan == 0) && vreme >= 10 && vreme < 18){
+    document.write('<img src="https://images.pexels.com/photos/1544420/pexels-photo-1544420.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">');
+} else {
+    document.write('<img src="https://images.pexels.com/photos/277559/pexels-photo-277559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">');
+}
 
 /*
 18. ZADATAK
