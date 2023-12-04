@@ -22,10 +22,10 @@ dobro jutro za vreme manje od 12 sati ujutru,
 dobar dan za vreme manje od 18 sati,
 u ostalim slučajevima ispisati dobro veče.
 */
-sati = datum.getHours();
-if (sati < 12) {
+let s = datum.getHours();
+if (s < 12) {
     console.log("Dobro jutro");
-} else if (sati < 18) {
+} else if (s < 18) {
     console.log("Dobar dan");
 } else {
     console.log("Dobro veče");
@@ -45,6 +45,28 @@ if(sati < 9) {
     console.log(`Firma trenutno ne radi`);
 } else {
     console.log(`Firma radi`);
+}
+
+/*
+9. ZADATAK
+Za unet sat početka i sat kraja radnog vremena dva lekara,  
+ispisati DA ukoliko se smene lekara preklapaju, 
+u suprotnom ispisati NE.
+(Ne može se desiti da lekar počne smenu pre ponoći, a završi sa smenom nakon ponoći, 
+ovo se podrazumeva i ne ispitivati dodatno)
+
+NE -  k1<p2   ili    k2<p1
+*/
+let p1 = 16;
+let k1 = 21;
+let p2 = 18;
+let k2 = 23;
+if(k1<=p2) {
+    console.log("NE");
+} else if(k2<=p1) {
+    console.log("NE");
+} else {
+    console.log("DA");
 }
 
 /*
