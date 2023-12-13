@@ -215,3 +215,195 @@ function sedmiDan(n) {
     }
 }
 sedmiDan(4);
+
+////////////////////////////////////////////////////////
+// 8. ZADATAK
+// Napisati funkciju deljivSaTri koja se koristi u ispisivanju brojeva koji su deljivi sa tri u intervalu od n do m.
+// Prebrojati koliko ima ovakvih brojeva od n do m.
+////////////////////////////////////////////////////////
+
+function deljivSaTri(n, m) {
+    let brojac = 0;
+    for(let i=n; i<=m; i++) {
+        if(i%3 == 0) {
+            console.log(i);
+            brojac++;
+        }
+    }
+    console.log(`U intervalu od ${n} do ${m} ima ${brojac} brojeva deljivih brojem 3`);
+    return brojac;
+}
+let a = deljivSaTri(10,30) // Izvrši funkciju i u a smesti njen produkt (što smo vratili - return)
+console.log(a); 
+
+////////////////////////////////////////////////////////
+// 9. ZADATAK
+// Napisati funkciju sumiraj koja određuje i vraća sumu brojeva od n do m. 
+// Brojeve n i m proslediti kao parametre funkciji.
+////////////////////////////////////////////////////////
+function sumiraj(n, m) {
+    let suma = 0;
+    for (let i = n; i <= m; i++) {
+        suma += i;
+    }
+    return suma;
+}
+let n = 1;
+let m = 10;
+console.log(`Suma brojeva od ${n} do ${m} je: ${sumiraj(n, m)}`);
+
+////////////////////////////////////////////////////////
+// 10. ZADATAK
+// Napisati funkciju množi koja određuje i vraća proizvod brojeva od n do m.
+// Brojeve n i m proslediti kao parametre funkciji.
+////////////////////////////////////////////////////////
+function mnozi(n, m) {
+    let proizvod = 1;
+    for (let i = n; i <= m; i++) {
+        proizvod *= i;
+    }
+    return proizvod;
+}
+console.log(`Proizvod brojeva od ${n} do ${m} je: ${mnozi(n, m)}`);
+
+////////////////////////////////////////////////////////
+// 11. ZADATAK
+// Napraviti funkciju aritmeticka koja vraća aritmetičku sredinu brojeva od n do m. Brojeve n i m proslediti kao parametre funkciji.
+////////////////////////////////////////////////////////
+function aritmeticka(n, m) {
+    let suma = sumiraj(n, m);
+    let br = 0;
+    for (let i = n; i <= m; i++) {
+        br++;
+    }
+    return suma / br;
+}
+console.log(`Aritmeticka sredina brojeva od ${n} do ${m} je: ${aritmeticka(n, m)}`);
+
+////////////////////////////////////////////////////////
+// 12. ZADATAK
+// Napisati funkciju aritmetickaTri koja vraća aritmetičku sredinu brojeva kojima je poslednja cifra 3 u intervalu od n do m. Brojeve n i m proslediti kao parametre funkciji.
+////////////////////////////////////////////////////////
+function aritmetickaTri (n, m) {
+    let arithmeticMean = 0;
+    let sum = 0;
+    let counter = 0;
+    for (i = n; i <= m; i++) {
+        if (i % 10 == 3) {
+            counter++;
+            sum = sum + i;
+        }
+    }
+    arithmeticMean = sum / counter;
+    return arithmeticMean;
+}
+console.log(aritmetickaTri(10, 13));
+
+////////////////////////////////////////////////////////
+// 13. ZADATAK
+// Napisati funkciju velicinaFonta kojoj se prosleđuje ceo broj a ona ispisuje tekst koji ima prosleđenu veličinu fonta.
+////////////////////////////////////////////////////////
+function velicinaFonta(n) {
+    document.write(`<p style='font-size: ${n}px;'>Lorem ipsum</p>`);
+}
+velicinaFonta(30);
+
+////////////////////////////////////////////////////////
+// 14. ZADATAK
+// Napisati funkciju recenica5 koja pet puta ispisuje istu rečenicu, a veličina fonta rečenice treba da bude jednaka vrednosti iteratora. 
+////////////////////////////////////////////////////////
+// 1. NAČIN
+function recenica5a () {
+    for (i=1; i<=5; i++)
+    {
+        document.write(`<h${i}>Neki tekst</h${i}>`)
+    }
+}
+recenica5a()
+
+// 2. NAČIN
+function recenica5b() {
+    for(let i = 1; i <= 5; i++) {
+        document.write(`<p style='font-size: ${i*5}px;'>Lorem ipsum</p>`);
+    }
+}
+recenica5b();
+
+////////////////////////////////////////////////////////
+// 15. ZADATAK
+// Dobili ste plaćenu programersku praksu u trajanju od n meseci. Prvog meseca, plata će biti a dinara, a ako budete vredno radili svakog narednog meseca ćete dobiti povišicu od d dinara. Brojeve n, a i d određujete sami.
+// a) Napišite funkciju poslednjaPlata kojoj se prosleđuju brojevi n, a i d. Funkcija treba da vrati kolika će vam plata biti poslednjeg meseca prakse, ukoliko svakog meseca budete dobijali povišicu.
+//    Testirati zadatak (pozvati funkciju i ispisati vrednost koju ona vraća).
+////////////////////////////////////////////////////////
+// 1. NAČIN
+function poslednjaPlata (n, a, d){
+    let zadnjaPlata = a + (n-1) * d;
+    return zadnjaPlata;
+}
+console.log(`Poslednja plata zaposlenog je ${poslednjaPlata(4, 5, 1)} dinara`);
+
+// 2. NAČIN
+function poslednjaPlata1(n, a, d) {
+    return a + (n - 1) * d;
+}
+console.log(poslednjaPlata1(6, 1000, 100));
+
+// 3. NAČIN
+function poslednjaPlata2(n, a, d) {
+    let plata = a;
+    let povisica = 0;
+    for (let i = 1; i <= n; i++) {
+        povisica = povisica + d;
+    }
+    return plata + povisica;
+}
+console.log(poslednjaPlata2(10, 1000, 50));
+
+////////////////////////////////////////////////////////
+// 15. ZADATAK
+// Dobili ste plaćenu programersku praksu u trajanju od n meseci. Prvog meseca, plata će biti a dinara, a ako budete vredno radili svakog narednog meseca ćete dobiti povišicu od d dinara. Brojeve n, a i d određujete sami.
+// b) Napišite funkciju ukupnaPlata kojoj se prosleđuju brojevi n, a i d. Funkcija treba da vrati vrednost koliko ćete ukupno navca zaraditi na praksi, ukoliko svakog meseca budete dobijali povišicu.
+//    Testirati zadatak (pozvati funkciju i ispisati vrednost koju ona vraća).
+////////////////////////////////////////////////////////
+// 1. NAČIN
+function ukupnaPlata (n, a, d){
+    let suma = 0;
+    for(let i = 0; i< n; i++){
+        suma = suma + a + d * i;
+    }
+    return suma;
+}
+console.log(`Ukupna plata zaposlenog je ${ukupnaPlata(5, 10, 2)} dinara`);
+
+// 2. NAČIN
+function ukupnaPlata1(n, a, d) {
+    return ((a + poslednjaPlata1(n, a, d)) / 2) * n;
+}
+console.log(ukupnaPlata1(3, 1000, 100));
+
+// 3. NAČIN
+function ukupnaPlata2(n, a, d) {
+    let plata = 0;
+    let povisica = 0;
+    for (let i = 1; i <= n; i++) {
+        povisica = povisica + d;
+        plata = plata + a + povisica;
+    }
+    return plata;
+}
+console.log(ukupnaPlata2(10, 1000, 50));
+
+////////////////////////////////////////////////////////
+// 16. ZADATAK
+// Na igrama bez granica, ekipi je postavljen zadatak da za što kraće vreme pređe stazu na kojoj se nalazi pokretni most. Takmičaru ove ekipe od polazne tačke do mosta treba t sekundi. Tačno p sekundi od kada takmičar može da krene sa polazne tačke (tj. od početka merenja) most počinje da se podiže. Ukoliko takmičar pre podizanja mosta kroči na most, zadržaće ga svojom težinom i most se neće podići tj. takmičar će moći nesmetano da pređe most. Od trenutka podizanja pa do spuštanja mosta protiče n sekundi i prelaz preko mosta za to vreme nije moguć. Nakon toga most ostaje spušten. Takmičari za čekanje kod mosta dobijaju negativne poene, pa je tim rešio da napravi program koji će im tačno odrediti u kojoj sekundi treba da pođu sa startne pozicije kako ne bi dobijali negativne poene. Pomozite timu da napravi funkciju na osnovu prosleđenih vrednosti t, p i n. Funkcija vraća koliko sekundi nakon početka merenja vremena treba da pođe, kako bi prošli poligon bez zaustavljanja.
+////////////////////////////////////////////////////////
+function igreBezGranica(t,p,n) {
+    if(t<p || t>p+n) {
+        console.log(`Čekanje je 0s`);
+    } else {
+        let cekanje = p + n - t;
+        console.log(`Takmičar je potrebno da sačeka ${cekanje}s.`)
+    }
+}
+igreBezGranica(15, 20, 25);
+igreBezGranica(15, 10, 12);
