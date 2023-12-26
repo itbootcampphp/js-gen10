@@ -50,15 +50,73 @@ dani.forEach(d => {
 });
 
 // b) Ispisati prvi od njih
+// 1. način
 console.log(dani[indeksPrvog].datum);
 
+// 2. način
+for(let i=0; i<dani.length; i++) {
+    if(maxBrMerenja == dani[i].temperature.length) {
+        console.log(dani[i].datum);
+        break;
+    }
+}
 
 // c) Ispisati poslednji od njih
+// 1. način
 console.log(dani[indeksPoslednjeg].datum);
 
+// 2. način
+for(let i=dani.length-1; i>=0; i--) {
+    if(maxBrMerenja == dani[i].temperature.length) {
+        console.log(dani[i].datum);
+        break;
+    }
+}
 
 // 3. ZADATAK
 // Napraviti arrow funksiju koja prebrojava i ispisuje koliko je bilo kišnih dana, koliko je bilo sunčanih dana i koliko je bilo oblačnih dana
+let brSuncanihIKisnih = niz => {
+    let kisni = 0;
+    let suncani = 0;
+    niz.forEach(dan => {
+        if(dan.kisa) {
+            kisni++;
+        }
+        if(dan.sunce) {
+            suncani++;
+        }
+    });
+    console.log(`Kisnih dana je bilo: ${kisni}, a suncanih je bilo: ${suncani}`);
+}
+brSuncanihIKisnih(dani);
 
 // 4. ZADATAK
 // Napraviti arrow funkciju koja računa i vraća koliko je bilo dana sa natprosečnom temperaturom
+let brNatprosecnihDana = niz => {
+    let zbirTemp = 0;
+    let brTemp = 0;
+    let brDana = 0;
+    niz.forEach(dan => {
+        dan.temperature.forEach(t => {
+            zbirTemp += t;
+            brTemp++;
+        });
+    });
+    let prosekUkupno = zbirTemp / brTemp;
+    console.log(prosekUkupno);
+    niz.forEach(dan => {
+        let zbirLok = 0;
+        let brLok = 0;
+        dan.temperature.forEach(t => {
+            zbirLok+= t;
+            brLok++;
+        });
+        let prosLok = zbirLok / brLok;
+        console.log(prosLok);
+        if(prosLok > prosekUkupno) {
+            brDana++;
+        }
+    });
+    return brDana;
+}
+console.log(`Broj dana sa natprosecnom temperaturom: ${brNatprosecnihDana(dani)}`);
