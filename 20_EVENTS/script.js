@@ -23,8 +23,23 @@ btnBroji.addEventListener("click", () => {
     br++;
 });
 
-// 3. ZADATAK
-let b = 0;
+//3.ZADATAK
+let btnMinus = document.getElementById("minus");
+let btnPlus = document.getElementById("plus");
+let spanBrojac = document.getElementById("brojac");
+let broj = 0;
+spanBrojac.innerHTML = broj;
+btnMinus.addEventListener('click', () =>{
+    broj--;
+    if(broj < 0){ //4. zadatak
+        broj = 0;
+    }
+    spanBrojac.innerHTML = broj;
+});
+btnPlus.addEventListener('click', () =>{
+    broj++;
+    spanBrojac.innerHTML = broj;
+});
 
 // 5. ZADATAK
 // Napraviti input polje i dugme.
