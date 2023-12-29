@@ -52,3 +52,44 @@ btnIspisiTekst.addEventListener("click", () => {
     let preuzmiTekst = inputTekst.value;
     pIspisTeksta.innerHTML = `Zdravo ${preuzmiTekst}`;
 });
+
+// 6. ZADATAK
+// Dopuniti 5. zadatak dodavanjem radio button polja gde korisnik može odabrati svoj pol (muški, ženski ili neopredeljen). 
+// Nakon duplog klika na dugme, u konzoli ispisati pol koji je osoba odabrala.
+let radioMuski = document.getElementById("muski");
+let radioZenski = document.getElementById("zenski");
+let radioNeopredeljen = document.getElementById("neopredeljen");
+btnIspisiTekst.addEventListener("dblclick", () => {
+    // 1. NAČIN
+    if(radioMuski.checked) {
+        console.log("Osoba muškog pola");
+    } else if(radioZenski.checked) {
+        console.log("Osoba ženskog pola");
+    } else {
+        console.log("Osoba se nije opredelila");
+    } 
+
+    // 2. NAČIN
+    // Selektuj mi input polje, čiji atribut name ima vrednost 'pol' i pri tome je čekiran
+    let checkedPol = document.querySelector("input[name='pol']:checked");
+    console.log(`Osoba ${checkedPol.value} pola`);
+
+    // 3. NAČIN
+    // Selektuj mi sve radio button po name atributu - getElementByName
+    let polRadios = document.getElementsByName('pol');
+    polRadios.forEach(radioButton => {
+        if(radioButton.checked) {
+            console.log(`Osoba ${radioButton.value} pola`);
+        }
+    });
+
+    // 4. NAČIN
+    // Slektuj mi sve radio button po name atributu - querySelectorAll
+    let polRadiosInput = document.querySelectorAll("input[name='pol']");
+    polRadiosInput.forEach(rb => {
+        if(rb.checked) {
+            console.log(`Osoba ${rb.value} pola`);
+        }
+    });
+});
+
