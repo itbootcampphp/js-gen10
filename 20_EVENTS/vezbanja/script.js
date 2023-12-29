@@ -93,3 +93,28 @@ btnIspisiTekst.addEventListener("dblclick", () => {
     });
 });
 
+// 7. ZADATAK
+let inputKvadrat = document.getElementById("kvadrat");
+let inputPolovina = document.getElementById("polovina");
+let inputPovrsina = document.getElementById("povrsina");
+let btnKvadrat = document.getElementById("btnKvadrat");
+let btnPolovina = document.getElementById("btnPolovina");
+let btnPovrsina = document.getElementById("btnPovrsina");
+let pKvadrat = document.getElementById("ispisKvadrat");
+let pPolovina = document.getElementById("ispisPolovina");
+let pPovrsina = document.getElementById("ispisPovrsina");
+btnKvadrat.addEventListener("click", (e) => {
+  let kvadrat = Math.pow(inputKvadrat.value, 2);
+  pKvadrat.innerText = kvadrat;
+  e.preventDefault();
+});
+btnPolovina.addEventListener("click", (e) => {
+  let polovina = inputPolovina.value / 2;
+  pPolovina.innerHTML = polovina;
+  e.preventDefault();
+});
+btnPovrsina.addEventListener("click", (e) => {
+  let povrsina = Math.pow(inputPovrsina.value, 2) * Math.PI;
+  pPovrsina.innerHTML = povrsina;
+  e.preventDefault();
+});
