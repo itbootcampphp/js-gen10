@@ -5,6 +5,7 @@ export class Chatroom{
         this.room = r;
         this.username = u;
         this.chats = db.collection('chats');
+        this.unsub = false;
     }
 
     // Seteri
@@ -13,6 +14,9 @@ export class Chatroom{
     }
     set room(r){
         this._room = r;
+        if(this.unsub) {
+            this.unsub();
+        }
     }
 
     // Geteri
@@ -43,7 +47,7 @@ export class Chatroom{
 
     // Metod za ispis dodatih četova/dokumenata
     getChats(callback) {
-        this.chats
+        this.unsub = this.chats
         .where('room', '==', this.room)
         .orderBy('created_at')
         .onSnapshot(snapshot => {

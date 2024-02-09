@@ -46,4 +46,8 @@ export class ChatUI {
         </li>`;
         this.list.innerHTML += htmlLI;
     }
+
+    delete() {
+        this.list.innerHTML = "";
+    }
 }
